@@ -1,0 +1,8 @@
+{
+  "name": "FAQ Accordion Widget",
+  "description": "A modern, responsive, accessible FAQ accordion widget with real-time search, category filters, dark mode, favorites, deep linking, and AI knowledge assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

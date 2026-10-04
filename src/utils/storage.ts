@@ -7,11 +7,10 @@ export const STORAGE_KEYS = {
 } as const;
 
 export function getStoredTheme(): 'light' | 'dark' {
-  if (typeof window === 'undefined') return 'light';
+  if (typeof window === 'undefined') return 'dark';
   const saved = localStorage.getItem(STORAGE_KEYS.THEME);
   if (saved === 'dark' || saved === 'light') return saved;
-  // Fall back to system preference
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  return 'dark';
 }
 
 export function setStoredTheme(theme: 'light' | 'dark'): void {

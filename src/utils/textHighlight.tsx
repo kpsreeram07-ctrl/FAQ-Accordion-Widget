@@ -11,7 +11,7 @@ export const HighlightText: React.FC<HighlightTextProps> = ({
   text,
   query,
   className = '',
-  highlightClassName = 'bg-amber-100 dark:bg-amber-900/60 text-amber-950 dark:text-amber-200 px-0.5 rounded font-medium',
+  highlightClassName = 'bg-indigo-500/30 text-indigo-200 border border-indigo-500/40 px-1 py-0.2 rounded font-medium',
 }) => {
   const cleanQuery = query.trim();
   if (!cleanQuery) {

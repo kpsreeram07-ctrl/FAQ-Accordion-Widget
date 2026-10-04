@@ -26,18 +26,18 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
             <button
               key={cat}
               onClick={() => onSelectCategory(cat)}
-              className={`flex items-center gap-2 px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 ${
+              className={`flex items-center gap-2 px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-all duration-150 whitespace-nowrap shrink-0 cursor-pointer ${
                 isActive
-                  ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 shadow-sm'
-                  : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800'
+                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30 border border-indigo-500'
+                  : 'bg-slate-800/50 backdrop-blur-md border border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800/80 hover:border-slate-600'
               }`}
             >
               <span>{cat}</span>
               <span
                 className={`font-mono text-[11px] tabular-nums ${
                   isActive
-                    ? 'text-neutral-300 dark:text-neutral-600'
-                    : 'text-neutral-400 dark:text-neutral-500'
+                    ? 'text-indigo-200'
+                    : 'text-slate-400'
                 }`}
               >
                 {count}
@@ -49,25 +49,25 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         {/* Favorites filter button */}
         <button
           onClick={() => onSelectCategory('Favorites')}
-          className={`flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-colors whitespace-nowrap shrink-0 ${
+          className={`flex items-center gap-1.5 px-3.5 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-all duration-150 whitespace-nowrap shrink-0 cursor-pointer ${
             selectedCategory === 'Favorites'
-              ? 'bg-neutral-900 text-white dark:bg-white dark:text-neutral-900 shadow-sm'
-              : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800'
+              ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30 border border-indigo-500'
+              : 'bg-slate-800/50 backdrop-blur-md border border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800/80 hover:border-slate-600'
           }`}
         >
           <Star
             className={`w-3.5 h-3.5 ${
               favoritesCount > 0
                 ? 'fill-amber-400 text-amber-400'
-                : 'text-neutral-400'
+                : 'text-slate-400'
             }`}
           />
           <span>Favorites</span>
           <span
             className={`font-mono text-[11px] tabular-nums ${
               selectedCategory === 'Favorites'
-                ? 'text-neutral-300 dark:text-neutral-600'
-                : 'text-neutral-400 dark:text-neutral-500'
+                ? 'text-indigo-200'
+                : 'text-slate-400'
             }`}
           >
             {favoritesCount}

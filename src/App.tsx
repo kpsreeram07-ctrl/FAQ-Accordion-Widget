@@ -26,8 +26,8 @@ import {
 } from './utils/storage';
 
 export default function App() {
-  // Theme state
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  // Theme state: defaults to dark mode with modern dark navy styling
+  const [theme, setTheme] = useState<'light' | 'dark'>('dark');
 
   // Accordion state
   const [openIds, setOpenIds] = useState<Set<string>>(new Set(['general-1']));
@@ -299,7 +299,17 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 transition-colors">
+    <div
+      className="min-h-screen w-full flex flex-col text-slate-100 transition-colors"
+      style={{
+        margin: 0,
+        minHeight: '100vh',
+        width: '100%',
+        backgroundColor: '#0f172a',
+        backgroundImage: 'linear-gradient(135deg, #0f172a, #1e293b, #0f172a)',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       {/* Top Bar Navigation */}
       <Navbar
         theme={theme}

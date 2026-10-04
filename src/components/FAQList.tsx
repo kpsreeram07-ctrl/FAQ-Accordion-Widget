@@ -38,22 +38,22 @@ export const FAQList: React.FC<FAQListProps> = ({
 }) => {
   if (faqs.length === 0) {
     return (
-      <div className="text-center py-16 px-4 rounded-2xl border border-dashed border-neutral-300 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900/30 my-6">
-        <div className="w-12 h-12 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-neutral-500 dark:text-neutral-400 flex items-center justify-center mx-auto mb-3">
+      <div className="text-center py-16 px-4 rounded-2xl border border-dashed border-slate-700/80 bg-slate-800/40 backdrop-blur-md my-6 shadow-lg shadow-black/15">
+        <div className="w-12 h-12 rounded-xl bg-slate-800 text-slate-300 flex items-center justify-center mx-auto mb-3 border border-slate-700">
           {selectedCategory === 'Favorites' ? (
-            <Star className="w-6 h-6 text-amber-500" />
+            <Star className="w-6 h-6 text-amber-400 fill-amber-400/20" />
           ) : (
-            <SearchX className="w-6 h-6" />
+            <SearchX className="w-6 h-6 text-slate-400" />
           )}
         </div>
 
-        <h3 className="text-base font-semibold text-neutral-900 dark:text-neutral-100">
+        <h3 className="text-base font-semibold text-white">
           {selectedCategory === 'Favorites'
             ? 'No favorite questions yet'
             : 'No matching questions found'}
         </h3>
 
-        <p className="mt-1 text-xs text-neutral-500 dark:text-neutral-400 max-w-md mx-auto text-balance">
+        <p className="mt-1 text-xs text-slate-300 max-w-md mx-auto text-balance">
           {selectedCategory === 'Favorites'
             ? 'Click the star icon on any question to bookmark it here for fast reference.'
             : `We could not find any questions matching "${searchQuery}". Try using different keywords, clearing filters, or asking our AI Assistant.`}
@@ -63,7 +63,7 @@ export const FAQList: React.FC<FAQListProps> = ({
           {isFiltered && (
             <button
               onClick={onResetFilters}
-              className="px-3.5 py-1.5 rounded-lg text-xs font-medium border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors cursor-pointer"
+              className="px-3.5 py-1.5 rounded-lg text-xs font-medium border border-slate-700 bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700 transition-colors cursor-pointer"
             >
               Clear Search & Filters
             </button>
@@ -71,7 +71,7 @@ export const FAQList: React.FC<FAQListProps> = ({
 
           <button
             onClick={onOpenAI}
-            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium bg-indigo-600 text-white hover:bg-indigo-700 transition-colors shadow-xs cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium bg-indigo-600 text-white hover:bg-indigo-500 transition-colors shadow-md shadow-indigo-600/30 cursor-pointer"
           >
             <Sparkles className="w-3.5 h-3.5" />
             <span>Ask AI Assistant</span>
